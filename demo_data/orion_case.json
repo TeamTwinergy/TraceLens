@@ -1,0 +1,1224 @@
+{
+  "key": "demo",
+  "label": "Orion Procurement Review",
+  "synthetic": true,
+  "docs": [
+    {
+      "id": "D1",
+      "name": "transaction_record.pdf",
+      "type": "PDF",
+      "pages": 6,
+      "unit": "Page",
+      "size": "412 KB",
+      "meta": "Consolidated transfer record, Jan–Apr 2026",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "D2",
+      "name": "contract.pdf",
+      "type": "PDF",
+      "pages": 12,
+      "unit": "Page",
+      "size": "1.1 MB",
+      "meta": "Procurement Agreement, Nova Infrastructure and Orion Systems",
+      "date": "2026-01-05"
+    },
+    {
+      "id": "D3",
+      "name": "interview_notes.pdf",
+      "type": "PDF",
+      "pages": 10,
+      "unit": "Page",
+      "size": "236 KB",
+      "meta": "Internal review interview, 2 Apr 2026",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "D4",
+      "name": "email_archive.pdf",
+      "type": "PDF",
+      "pages": 48,
+      "unit": "Message",
+      "size": "2.4 MB",
+      "meta": "Exported mailbox, 48 messages",
+      "date": "2026-04-12"
+    },
+    {
+      "id": "D5",
+      "name": "financial_report.pdf",
+      "type": "PDF",
+      "pages": 18,
+      "unit": "Page",
+      "size": "1.8 MB",
+      "meta": "FY2025-26 financial report, issued 30 Apr 2026",
+      "date": "2026-04-30"
+    }
+  ],
+  "entities": [
+    {
+      "id": "rajiv",
+      "name": "Rajiv Mehta",
+      "type": "Person",
+      "aliases": [
+        "Rajiv Mehta",
+        "R. Mehta",
+        "Mehta"
+      ]
+    },
+    {
+      "id": "anil",
+      "name": "Anil Rao",
+      "type": "Person",
+      "aliases": [
+        "Anil Rao"
+      ]
+    },
+    {
+      "id": "priya",
+      "name": "Priya Nair",
+      "type": "Person",
+      "aliases": [
+        "Priya Nair"
+      ]
+    },
+    {
+      "id": "dev",
+      "name": "Dev Kulkarni",
+      "type": "Person",
+      "aliases": [
+        "Dev Kulkarni"
+      ]
+    },
+    {
+      "id": "nova",
+      "name": "Nova Infrastructure",
+      "type": "Organization",
+      "aliases": [
+        "Nova Infrastructure Ltd",
+        "Nova Infrastructure",
+        "Nova"
+      ]
+    },
+    {
+      "id": "orion",
+      "name": "Orion Systems",
+      "type": "Organization",
+      "aliases": [
+        "Orion Systems Pvt Ltd",
+        "Orion Systems",
+        "Orion"
+      ]
+    },
+    {
+      "id": "apex",
+      "name": "Apex Consulting",
+      "type": "Organization",
+      "aliases": [
+        "Apex Consulting",
+        "Apex"
+      ]
+    },
+    {
+      "id": "hyd",
+      "name": "Hyderabad",
+      "type": "Location",
+      "aliases": [
+        "Hyderabad"
+      ]
+    },
+    {
+      "id": "equip",
+      "name": "Network equipment",
+      "type": "Product",
+      "aliases": [
+        "network equipment"
+      ]
+    },
+    {
+      "id": "m8",
+      "name": "₹8,00,000",
+      "type": "Money",
+      "aliases": [
+        "₹8,00,000",
+        "₹8 lakh"
+      ]
+    },
+    {
+      "id": "m42",
+      "name": "₹42,00,000",
+      "type": "Money",
+      "aliases": [
+        "₹42,00,000"
+      ]
+    },
+    {
+      "id": "m14",
+      "name": "₹14,00,000",
+      "type": "Money",
+      "aliases": [
+        "₹14,00,000"
+      ]
+    },
+    {
+      "id": "m120",
+      "name": "₹1,20,000",
+      "type": "Money",
+      "aliases": [
+        "₹1,20,000"
+      ]
+    },
+    {
+      "id": "m20",
+      "name": "₹20,000",
+      "type": "Money",
+      "aliases": [
+        "₹20,000"
+      ]
+    },
+    {
+      "id": "m60",
+      "name": "₹60,000",
+      "type": "Money",
+      "aliases": [
+        "₹60,000"
+      ]
+    },
+    {
+      "id": "m28",
+      "name": "₹28,00,000",
+      "type": "Money",
+      "aliases": [
+        "₹28,00,000"
+      ]
+    },
+    {
+      "id": "d0105",
+      "name": "5 Jan 2026",
+      "type": "Date",
+      "aliases": [
+        "5 January 2026"
+      ]
+    },
+    {
+      "id": "d0109",
+      "name": "9 Jan 2026",
+      "type": "Date",
+      "aliases": [
+        "9 January 2026"
+      ]
+    },
+    {
+      "id": "d0115",
+      "name": "15 Jan 2026",
+      "type": "Date",
+      "aliases": [
+        "15 January 2026"
+      ]
+    },
+    {
+      "id": "d0122",
+      "name": "22 Jan 2026",
+      "type": "Date",
+      "aliases": [
+        "22 Jan 2026"
+      ]
+    },
+    {
+      "id": "d0203",
+      "name": "3 Feb 2026",
+      "type": "Date",
+      "aliases": [
+        "3 Feb 2026"
+      ]
+    },
+    {
+      "id": "d0204",
+      "name": "4 Feb 2026",
+      "type": "Date",
+      "aliases": [
+        "04 Feb 2026"
+      ]
+    },
+    {
+      "id": "d0220",
+      "name": "20 Feb 2026",
+      "type": "Date",
+      "aliases": [
+        "20 Feb 2026"
+      ]
+    },
+    {
+      "id": "d0312",
+      "name": "12 Mar 2026",
+      "type": "Date",
+      "aliases": [
+        "12 Mar 2026"
+      ]
+    },
+    {
+      "id": "d0318",
+      "name": "18 Mar 2026",
+      "type": "Date",
+      "aliases": [
+        "18 Mar 2026"
+      ]
+    },
+    {
+      "id": "d0328",
+      "name": "28 Mar 2026",
+      "type": "Date",
+      "aliases": [
+        "28 Mar 2026"
+      ]
+    },
+    {
+      "id": "d0402",
+      "name": "2 Apr 2026",
+      "type": "Date",
+      "aliases": [
+        "02 Apr 2026",
+        "2 April 2026"
+      ]
+    },
+    {
+      "id": "d0403",
+      "name": "3 Apr 2026",
+      "type": "Date",
+      "aliases": [
+        "03 Apr 2026"
+      ]
+    },
+    {
+      "id": "trf1",
+      "name": "TRF-88231",
+      "type": "ID",
+      "aliases": [
+        "TRF-88231"
+      ]
+    },
+    {
+      "id": "trf2",
+      "name": "TRF-88377",
+      "type": "ID",
+      "aliases": [
+        "TRF-88377"
+      ]
+    },
+    {
+      "id": "acct",
+      "name": "A/c ending 4417",
+      "type": "ID",
+      "aliases": [
+        "A/c ending 4417"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-001",
+      "doc": "D2",
+      "page": 1,
+      "section": "Parties and Scope",
+      "type": "Contract term",
+      "text": "This Procurement Agreement is entered into on 5 January 2026 between Nova Infrastructure Ltd and Orion Systems Pvt Ltd for the supply of network equipment valued at ₹42,00,000.",
+      "entities": [
+        "nova",
+        "orion",
+        "equip",
+        "m42",
+        "d0105"
+      ],
+      "conf": 96,
+      "importance": "High",
+      "tags": [
+        "contract"
+      ]
+    },
+    {
+      "id": "E-002",
+      "doc": "D2",
+      "page": 7,
+      "section": "Payment Terms",
+      "type": "Contract term",
+      "text": "Orion Systems shall invoice Nova Infrastructure in three equal milestones of ₹14,00,000. Release of the final milestone requires a delivery confirmation signed by Nova Infrastructure.",
+      "entities": [
+        "orion",
+        "nova",
+        "m14"
+      ],
+      "conf": 95,
+      "importance": "High",
+      "tags": [
+        "contract",
+        "milestones"
+      ]
+    },
+    {
+      "id": "E-003",
+      "doc": "D2",
+      "page": 9,
+      "section": "Approvals",
+      "type": "Approval",
+      "text": "Procurement approval was granted by Rajiv Mehta, Head of Procurement at Nova Infrastructure, on 9 January 2026.",
+      "entities": [
+        "rajiv",
+        "nova",
+        "d0109"
+      ],
+      "conf": 93,
+      "importance": "Medium",
+      "tags": [
+        "approval"
+      ]
+    },
+    {
+      "id": "E-004",
+      "doc": "D1",
+      "page": 3,
+      "section": "Transfers",
+      "type": "Transaction",
+      "text": "12 Mar 2026 | TRF-88231 | Debit: Rajiv Mehta (A/c ending 4417) | Credit: Orion Systems Pvt Ltd | ₹8,00,000 | Ref: CONSULT-ADV",
+      "entities": [
+        "rajiv",
+        "orion",
+        "m8",
+        "d0312",
+        "trf1",
+        "acct"
+      ],
+      "conf": 95,
+      "importance": "High",
+      "tags": [
+        "transaction",
+        "personal-account"
+      ],
+      "amount": 800000,
+      "date": "2026-03-12"
+    },
+    {
+      "id": "E-005",
+      "doc": "D1",
+      "page": 2,
+      "section": "Vendor payments",
+      "type": "Transaction",
+      "text": "04 Feb 2026 | TRF-88102 | Debit: Nova Infrastructure Ltd | Credit: Orion Systems Pvt Ltd | ₹14,00,000 | Ref: MILESTONE-1",
+      "entities": [
+        "nova",
+        "orion",
+        "m14",
+        "d0204"
+      ],
+      "conf": 94,
+      "importance": "Medium",
+      "tags": [
+        "transaction",
+        "milestones"
+      ],
+      "amount": 1400000,
+      "date": "2026-02-04"
+    },
+    {
+      "id": "E-006",
+      "doc": "D1",
+      "page": 2,
+      "section": "Vendor payments",
+      "type": "Transaction",
+      "text": "22 Jan 2026 | Debit: Nova Infrastructure Ltd | Credit: Apex Consulting | ₹20,000 | Ref: ADVISORY-RETAINER",
+      "entities": [
+        "nova",
+        "apex",
+        "m20",
+        "d0122"
+      ],
+      "conf": 90,
+      "importance": "Low",
+      "tags": [
+        "transaction",
+        "retainer"
+      ],
+      "amount": 20000,
+      "date": "2026-01-22"
+    },
+    {
+      "id": "E-007",
+      "doc": "D1",
+      "page": 3,
+      "section": "Vendor payments",
+      "type": "Transaction",
+      "text": "20 Feb 2026 | Debit: Nova Infrastructure Ltd | Credit: Apex Consulting | ₹60,000 | Ref: ADVISORY-RETAINER",
+      "entities": [
+        "nova",
+        "apex",
+        "m60",
+        "d0220"
+      ],
+      "conf": 90,
+      "importance": "Low",
+      "tags": [
+        "transaction",
+        "retainer"
+      ],
+      "amount": 60000,
+      "date": "2026-02-20"
+    },
+    {
+      "id": "E-008",
+      "doc": "D1",
+      "page": 4,
+      "section": "Vendor payments",
+      "type": "Transaction",
+      "text": "28 Mar 2026 | Debit: Nova Infrastructure Ltd | Credit: Apex Consulting | ₹1,20,000 | Ref: ADVISORY-RETAINER",
+      "entities": [
+        "nova",
+        "apex",
+        "m120",
+        "d0328"
+      ],
+      "conf": 90,
+      "importance": "Low",
+      "tags": [
+        "transaction",
+        "retainer"
+      ],
+      "amount": 120000,
+      "date": "2026-03-28"
+    },
+    {
+      "id": "E-009",
+      "doc": "D1",
+      "page": 4,
+      "section": "Vendor payments",
+      "type": "Transaction",
+      "text": "02 Apr 2026 | TRF-88301 | Debit: Nova Infrastructure Ltd | Credit: Orion Systems Pvt Ltd | ₹14,00,000 | Ref: MILESTONE-2",
+      "entities": [
+        "nova",
+        "orion",
+        "m14",
+        "d0402"
+      ],
+      "conf": 94,
+      "importance": "Medium",
+      "tags": [
+        "transaction",
+        "milestones"
+      ],
+      "amount": 1400000,
+      "date": "2026-04-02"
+    },
+    {
+      "id": "E-010",
+      "doc": "D1",
+      "page": 5,
+      "section": "Vendor payments",
+      "type": "Transaction",
+      "text": "03 Apr 2026 | TRF-88377 | Debit: Nova Infrastructure Ltd | Credit: Orion Systems Pvt Ltd | ₹14,00,000 | Ref: MILESTONE-2",
+      "entities": [
+        "nova",
+        "orion",
+        "m14",
+        "d0403",
+        "trf2"
+      ],
+      "conf": 94,
+      "importance": "High",
+      "tags": [
+        "transaction",
+        "milestones",
+        "repeat-reference"
+      ],
+      "amount": 1400000,
+      "date": "2026-04-03"
+    },
+    {
+      "id": "E-011",
+      "doc": "D4",
+      "page": 42,
+      "section": "Message 42",
+      "type": "Communication",
+      "text": "From: Rajiv Mehta | To: Anil Rao (Orion Systems) | 18 Mar 2026: Confirming the ₹8,00,000 sent on 12 Mar 2026 has reached you. Please book it as an advisory fee and keep it separate from the main invoice.",
+      "entities": [
+        "rajiv",
+        "anil",
+        "orion",
+        "m8",
+        "d0318",
+        "d0312"
+      ],
+      "conf": 91,
+      "importance": "High",
+      "tags": [
+        "email",
+        "advisory-fee"
+      ]
+    },
+    {
+      "id": "E-012",
+      "doc": "D4",
+      "page": 17,
+      "section": "Message 17",
+      "type": "Communication",
+      "text": "From: Rajiv Mehta | To: Priya Nair (Apex Consulting) | 3 Feb 2026: Please share your advisory proposal for Nova by Friday so we can finalise the retainer.",
+      "entities": [
+        "rajiv",
+        "priya",
+        "apex",
+        "nova",
+        "d0203"
+      ],
+      "conf": 88,
+      "importance": "Medium",
+      "tags": [
+        "email",
+        "proposal"
+      ]
+    },
+    {
+      "id": "E-013",
+      "doc": "D3",
+      "page": 8,
+      "section": "Statement on vendor relationships",
+      "type": "Statement",
+      "text": "Rajiv Mehta stated that he had no financial relationship with Orion Systems and had never transferred personal funds to any vendor. (Interview conducted by Dev Kulkarni on 2 April 2026.)",
+      "entities": [
+        "rajiv",
+        "orion",
+        "dev",
+        "d0402"
+      ],
+      "conf": 92,
+      "importance": "High",
+      "tags": [
+        "statement",
+        "denial"
+      ]
+    },
+    {
+      "id": "E-014",
+      "doc": "D3",
+      "page": 5,
+      "section": "Approval timeline",
+      "type": "Statement",
+      "text": "Mehta recalled that procurement approval was given on 15 January 2026, after the board meeting.",
+      "entities": [
+        "rajiv",
+        "d0115"
+      ],
+      "conf": 86,
+      "importance": "Medium",
+      "tags": [
+        "statement",
+        "approval"
+      ]
+    },
+    {
+      "id": "E-015",
+      "doc": "D5",
+      "page": 14,
+      "section": "Vendor payments",
+      "type": "Report figure",
+      "text": "Total payments to Orion Systems during FY2025-26 amounted to ₹28,00,000.",
+      "entities": [
+        "orion",
+        "m28"
+      ],
+      "conf": 89,
+      "importance": "Medium",
+      "tags": [
+        "report",
+        "totals"
+      ]
+    },
+    {
+      "id": "E-016",
+      "doc": "D2",
+      "page": 3,
+      "section": "Delivery",
+      "type": "Contract term",
+      "text": "Equipment shall be delivered to the Nova Infrastructure data centre at Hyderabad.",
+      "entities": [
+        "nova",
+        "hyd"
+      ],
+      "conf": 90,
+      "importance": "Low",
+      "tags": [
+        "contract",
+        "delivery"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R-01",
+      "s": "rajiv",
+      "t": "nova",
+      "type": "Employed as Head of Procurement",
+      "ev": [
+        "E-003"
+      ],
+      "conf": 96
+    },
+    {
+      "id": "R-02",
+      "s": "rajiv",
+      "t": "orion",
+      "type": "Financial relationship (transfer)",
+      "ev": [
+        "E-004",
+        "E-011"
+      ],
+      "conf": 91
+    },
+    {
+      "id": "R-03",
+      "s": "nova",
+      "t": "orion",
+      "type": "Contracting parties",
+      "ev": [
+        "E-001"
+      ],
+      "conf": 97
+    },
+    {
+      "id": "R-04",
+      "s": "nova",
+      "t": "orion",
+      "type": "Milestone payments",
+      "ev": [
+        "E-005",
+        "E-009",
+        "E-010"
+      ],
+      "conf": 94
+    },
+    {
+      "id": "R-05",
+      "s": "nova",
+      "t": "apex",
+      "type": "Advisory retainer payments",
+      "ev": [
+        "E-006",
+        "E-007",
+        "E-008"
+      ],
+      "conf": 90
+    },
+    {
+      "id": "R-06",
+      "s": "rajiv",
+      "t": "apex",
+      "type": "Requested proposal from",
+      "ev": [
+        "E-012"
+      ],
+      "conf": 82
+    },
+    {
+      "id": "R-07",
+      "s": "anil",
+      "t": "orion",
+      "type": "Contact at",
+      "ev": [
+        "E-011"
+      ],
+      "conf": 85
+    },
+    {
+      "id": "R-08",
+      "s": "rajiv",
+      "t": "anil",
+      "type": "Corresponded with",
+      "ev": [
+        "E-011"
+      ],
+      "conf": 88
+    },
+    {
+      "id": "R-09",
+      "s": "priya",
+      "t": "apex",
+      "type": "Contact at",
+      "ev": [
+        "E-012"
+      ],
+      "conf": 80
+    },
+    {
+      "id": "R-10",
+      "s": "rajiv",
+      "t": "priya",
+      "type": "Corresponded with",
+      "ev": [
+        "E-012"
+      ],
+      "conf": 80
+    },
+    {
+      "id": "R-11",
+      "s": "nova",
+      "t": "hyd",
+      "type": "Delivery site",
+      "ev": [
+        "E-016"
+      ],
+      "conf": 84
+    },
+    {
+      "id": "R-12",
+      "s": "orion",
+      "t": "equip",
+      "type": "Supplier of",
+      "ev": [
+        "E-001"
+      ],
+      "conf": 95
+    },
+    {
+      "id": "R-13",
+      "s": "dev",
+      "t": "rajiv",
+      "type": "Interviewed",
+      "ev": [
+        "E-013",
+        "E-014"
+      ],
+      "conf": 92
+    },
+    {
+      "id": "R-14",
+      "s": "rajiv",
+      "t": "acct",
+      "type": "Holder of account",
+      "ev": [
+        "E-004"
+      ],
+      "conf": 89
+    },
+    {
+      "id": "R-15",
+      "s": "trf1",
+      "t": "orion",
+      "type": "Credited to",
+      "ev": [
+        "E-004"
+      ],
+      "conf": 90
+    },
+    {
+      "id": "R-16",
+      "s": "rajiv",
+      "t": "trf1",
+      "type": "Originated transaction",
+      "ev": [
+        "E-004"
+      ],
+      "conf": 90
+    },
+    {
+      "id": "R-17",
+      "s": "trf2",
+      "t": "orion",
+      "type": "Payment under repeated reference",
+      "ev": [
+        "E-010"
+      ],
+      "conf": 78
+    },
+    {
+      "id": "R-18",
+      "s": "trf1",
+      "t": "m8",
+      "type": "Transfer amount",
+      "ev": [
+        "E-004"
+      ],
+      "conf": 93
+    }
+  ],
+  "events": [
+    {
+      "id": "EV-001",
+      "date": "2026-01-05",
+      "desc": "Procurement agreement dated between Nova Infrastructure and Orion Systems",
+      "ev": [
+        "E-001"
+      ],
+      "entities": [
+        "nova",
+        "orion"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-002",
+      "date": "2026-01-09",
+      "desc": "Procurement approval recorded for Rajiv Mehta",
+      "ev": [
+        "E-003"
+      ],
+      "entities": [
+        "rajiv",
+        "nova"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-003",
+      "date": "2026-01-15",
+      "desc": "Approval date as recalled by Rajiv Mehta in interview (claimed)",
+      "ev": [
+        "E-014"
+      ],
+      "entities": [
+        "rajiv"
+      ],
+      "kind": "claim"
+    },
+    {
+      "id": "EV-004",
+      "date": "2026-01-22",
+      "desc": "₹20,000 advisory retainer paid to Apex Consulting",
+      "ev": [
+        "E-006"
+      ],
+      "entities": [
+        "nova",
+        "apex"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-005",
+      "date": "2026-02-03",
+      "desc": "Rajiv Mehta asks Apex Consulting for an advisory proposal",
+      "ev": [
+        "E-012"
+      ],
+      "entities": [
+        "rajiv",
+        "priya",
+        "apex"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-006",
+      "date": "2026-02-04",
+      "desc": "Milestone 1: ₹14,00,000 paid to Orion Systems",
+      "ev": [
+        "E-005"
+      ],
+      "entities": [
+        "nova",
+        "orion"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-007",
+      "date": "2026-02-20",
+      "desc": "₹60,000 advisory retainer paid to Apex Consulting",
+      "ev": [
+        "E-007"
+      ],
+      "entities": [
+        "nova",
+        "apex"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-008",
+      "date": "2026-03-12",
+      "desc": "₹8,00,000 transferred from Rajiv Mehta’s account to Orion Systems",
+      "ev": [
+        "E-004"
+      ],
+      "entities": [
+        "rajiv",
+        "orion"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-009",
+      "date": "2026-03-18",
+      "desc": "Email from Rajiv Mehta to Anil Rao referring to the ₹8,00,000 transfer",
+      "ev": [
+        "E-011"
+      ],
+      "entities": [
+        "rajiv",
+        "anil",
+        "orion"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-010",
+      "date": "2026-03-28",
+      "desc": "₹1,20,000 advisory retainer paid to Apex Consulting",
+      "ev": [
+        "E-008"
+      ],
+      "entities": [
+        "nova",
+        "apex"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-011",
+      "date": "2026-04-02",
+      "desc": "Milestone 2: ₹14,00,000 paid to Orion Systems",
+      "ev": [
+        "E-009"
+      ],
+      "entities": [
+        "nova",
+        "orion"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-012",
+      "date": "2026-04-02",
+      "desc": "Interview: Rajiv Mehta denies any financial relationship with Orion Systems",
+      "ev": [
+        "E-013"
+      ],
+      "entities": [
+        "rajiv",
+        "orion",
+        "dev"
+      ],
+      "kind": "claim"
+    },
+    {
+      "id": "EV-013",
+      "date": "2026-04-03",
+      "desc": "Second ₹14,00,000 payment to Orion Systems under the same MILESTONE-2 reference",
+      "ev": [
+        "E-010"
+      ],
+      "entities": [
+        "nova",
+        "orion"
+      ],
+      "kind": "fact"
+    },
+    {
+      "id": "EV-014",
+      "date": "2026-04-30",
+      "desc": "Financial report states ₹28,00,000 paid to Orion Systems in FY2025-26",
+      "ev": [
+        "E-015"
+      ],
+      "entities": [
+        "orion"
+      ],
+      "kind": "claim"
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "C-07",
+      "type": "Claim vs evidence",
+      "severity": "High",
+      "conf": 93,
+      "a": [
+        "E-013"
+      ],
+      "b": [
+        "E-004",
+        "E-011"
+      ],
+      "title": "Denied financial relationship vs. transfer evidence",
+      "conflict": "The interview statement denies any financial relationship with Orion Systems, but a transfer record and an email both refer to a ₹8,00,000 transfer from Rajiv Mehta’s account to Orion Systems on 12 Mar 2026.",
+      "caution": "This is a potential contradiction. It does not establish intent or wrongdoing and requires human verification, for example confirming account ownership and the purpose of the transfer.",
+      "next": [
+        "Confirm ownership of account ending 4417",
+        "Ask Orion Systems how the CONSULT-ADV reference was booked"
+      ],
+      "chain": [
+        [
+          "Finding",
+          "Potential financial relationship with Orion Systems"
+        ],
+        [
+          "Claim",
+          "Personal funds of ₹8,00,000 were transferred to Orion Systems"
+        ],
+        [
+          "Evidence",
+          "E-004 transfer record and E-011 email"
+        ],
+        [
+          "Source",
+          "transaction_record.pdf, email_archive.pdf"
+        ],
+        [
+          "Location",
+          "Page 3, Message 42"
+        ]
+      ]
+    },
+    {
+      "id": "C-02",
+      "type": "Date conflict",
+      "severity": "Medium",
+      "conf": 88,
+      "a": [
+        "E-014"
+      ],
+      "b": [
+        "E-003"
+      ],
+      "title": "Approval date differs between interview and contract record",
+      "conflict": "The contract approvals section records approval on 9 Jan 2026. The interview records approval as recalled on 15 Jan 2026, six days later.",
+      "caution": "A recalled date can differ from a recorded date for ordinary reasons. Check the approval workflow log.",
+      "next": [
+        "Retrieve the approval workflow log",
+        "Obtain the board meeting minutes referenced in the interview"
+      ],
+      "chain": [
+        [
+          "Finding",
+          "Possible inconsistency in approval date"
+        ],
+        [
+          "Claim",
+          "Approval was given on 15 January 2026"
+        ],
+        [
+          "Evidence",
+          "E-014 against E-003"
+        ],
+        [
+          "Source",
+          "interview_notes.pdf, contract.pdf"
+        ],
+        [
+          "Location",
+          "Page 5, Page 9"
+        ]
+      ]
+    },
+    {
+      "id": "C-03",
+      "type": "Amount conflict",
+      "severity": "Medium",
+      "conf": 84,
+      "a": [
+        "E-015"
+      ],
+      "b": [
+        "E-005",
+        "E-009",
+        "E-010"
+      ],
+      "title": "Reported total to Orion Systems vs. recorded payments",
+      "conflict": "The financial report states ₹28,00,000 was paid to Orion Systems. The transfer record lists three ₹14,00,000 credits from Nova Infrastructure (₹42,00,000). The ₹14,00,000 difference matches the second payment under the MILESTONE-2 reference.",
+      "caution": "The report may be net of a reversal or timing difference that is not in this document set. Requires human verification.",
+      "next": [
+        "Check for a reversal or refund of TRF-88377",
+        "Reconcile the report with the ledger"
+      ],
+      "chain": [
+        [
+          "Finding",
+          "Possible inconsistency in total paid to Orion Systems"
+        ],
+        [
+          "Claim",
+          "₹28,00,000 paid during FY2025-26"
+        ],
+        [
+          "Evidence",
+          "E-015 against E-005, E-009, E-010"
+        ],
+        [
+          "Source",
+          "financial_report.pdf, transaction_record.pdf"
+        ],
+        [
+          "Location",
+          "Page 14, Pages 2 to 5"
+        ]
+      ]
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "A-03",
+      "title": "Transfer well above the typical non-milestone range",
+      "observed": 800000,
+      "lo": 20000,
+      "hi": 120000,
+      "ev": [
+        "E-004"
+      ],
+      "conf": 87,
+      "text": "The ₹8,00,000 transfer is significantly higher than the typical non-milestone transaction range observed in this document set.",
+      "caution": "Unusual size alone is not evidence of wrongdoing. Check the stated purpose (CONSULT-ADV)."
+    },
+    {
+      "id": "A-05",
+      "title": "Same payment reference used on two consecutive days",
+      "ev": [
+        "E-009",
+        "E-010"
+      ],
+      "conf": 82,
+      "text": "Two ₹14,00,000 payments to Orion Systems carry the reference MILESTONE-2 (TRF-88301 on 2 Apr and TRF-88377 on 3 Apr), while the contract describes only three milestones.",
+      "caution": "This may be a duplicate posting or a legitimate split. Check bank confirmations."
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G-01",
+      "title": "Delivery confirmation not found",
+      "severity": "High",
+      "ev": [
+        "E-002"
+      ],
+      "expected": "Delivery confirmation signed by Nova Infrastructure",
+      "text": "The contract references a delivery confirmation before release of the final milestone, but no matching delivery confirmation was found in the uploaded document set.",
+      "next": "Search for a delivery receipt or signed confirmation record."
+    },
+    {
+      "id": "G-02",
+      "title": "Milestone invoices not found",
+      "severity": "Medium",
+      "ev": [
+        "E-002"
+      ],
+      "expected": "Three milestone invoices from Orion Systems",
+      "text": "The contract requires milestone invoices. Payments are recorded, but no invoices are present to match them.",
+      "next": "Request the invoice register for Orion Systems."
+    },
+    {
+      "id": "G-03",
+      "title": "Board meeting minutes not found",
+      "severity": "Medium",
+      "ev": [
+        "E-014"
+      ],
+      "expected": "Minutes of the board meeting before 15 Jan 2026",
+      "text": "The interview refers to a board meeting preceding approval. No minutes or agenda are in the document set.",
+      "next": "Request board minutes for January 2026."
+    },
+    {
+      "id": "G-04",
+      "title": "Apex Consulting proposal or engagement letter not found",
+      "severity": "Low",
+      "ev": [
+        "E-012",
+        "E-006"
+      ],
+      "expected": "Advisory proposal or engagement letter",
+      "text": "An email requests an advisory proposal from Apex Consulting and retainers were paid, but no proposal or engagement letter is present.",
+      "next": "Search procurement files for the Apex engagement terms."
+    }
+  ]
+}

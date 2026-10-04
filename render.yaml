@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tracelens-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: LLM_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
