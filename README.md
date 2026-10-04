@@ -1,234 +1,1161 @@
-<p align="center"><img src="frontend/assets/logo-full.png" alt="TraceLens logo" width="380"></p>
-
 # TraceLens
 
-> Turn documents into evidence. Turn evidence into insight.
+### Investigate documents. Follow the evidence.
 
-## Overview
+<p align="center">
+  <img src="frontend/assets/logo-full.png" alt="TraceLens Logo" width="360">
+</p>
 
-TraceLens is a web application for investigating collections of documents. Instead of reading files one by one, an investigator sees the entities, relationships, dated events, contradictions, anomalies and missing records across the whole collection, and can open the exact passage, page and section behind every finding.
+<p align="center">
+  <strong>Turn documents into evidence. Turn evidence into insight.</strong>
+</p>
 
-It is aimed at investigators, auditors, compliance teams, journalists, legal researchers and anyone who has more documents than time.
+<p align="center">
+  <img src="https://img.shields.io/badge/ALGOTHON'26-ALG--AI--02-7C3AED?style=for-the-badge" alt="ALGOTHON 26">
+  <img src="https://img.shields.io/badge/AI-Document%20Investigation-8B5CF6?style=for-the-badge" alt="Document Investigation">
+  <img src="https://img.shields.io/badge/Frontend-Vanilla%20JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+</p>
 
-## Problem Statement
+<p align="center">
+  <a href="#-live-demo">Live Demo</a> •
+  <a href="#-the-problem">Problem</a> •
+  <a href="#-our-solution">Solution</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-how-it-works">How It Works</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-getting-started">Get Started</a> •
+  <a href="#-deployment">Deployment</a>
+</p>
 
-**Challenge:** ALGOXILLA, ALG-AI-02, Intelligent Document Investigator.
+---
 
-Information that matters is spread across contracts, emails, statements and ledgers. A denial on page 8 of one file and a transfer on page 3 of another are easy to miss when read by hand. Existing AI document tools mostly summarize one file or answer chat questions, which makes it hard to see how pieces of evidence connect and hard to verify where an answer came from.
+## 🔴 Live Demo
 
-## Our Solution
+### Frontend
 
-TraceLens treats the collection as one evidence system:
+**Live Application:**
+https://tracelens-frontend-ten.vercel.app/
 
-**documents → evidence → entities → relationships → events → contradictions → timeline → investigation → explainable conclusion**
+### Backend
 
-Every finding carries evidence IDs, so a conclusion can be traced back through *Finding → Claim → Evidence → Source → Location → Entity → Event*. Findings use cautious wording ("potential contradiction", "possible anomaly", "requires human verification"). TraceLens does not make legal or criminal judgments, and the investigator stays in control through review actions.
+**FastAPI Backend:**
+https://tracelens-api-rfm0.onrender.com
 
-## Key Features
+### API Documentation
 
-* **Evidence graph:** interactive graph with drag, zoom, pan, type filters, node search, path highlighting, and the evidence behind every relationship.
-* **Contradiction detection:** side-by-side claims with sources, why they conflict, severity, an explained confidence level, and recommended next checks.
-* **Evidence gap analyzer:** finds documents the evidence refers to that are not in the uploaded set, such as a missing delivery confirmation.
-* **Chain of evidence and citations:** every answer, graph edge, timeline event and report row links to the source passage.
-* **Timeline, anomalies and entities:** reconstructed chronology, amount outliers and repeated references, and entity profiles with mention counts and relationships.
-* **Cited investigator chat:** answers are assembled only from retrieved passages, and it replies "I couldn't find sufficient evidence" when nothing supports an answer.
-* **Human review:** verify, dismiss, flag, tag and annotate evidence, add manual entity links, and mark contradictions resolved.
-* **Reports and presentation:** investigation report (HTML, JSON, CSV, print to PDF), a guided Presentation Mode, and a light/dark theme.
-* **Synthetic demo:** a fully populated fictional case, "Orion Procurement Review", labeled as synthetic data.
+**Interactive API Docs:**
+https://tracelens-api-rfm0.onrender.com/api/docs
 
-## How It Works
+### Health Check
 
-1. Open the app and choose **Explore Demo**, or **Start Investigation** to add your own files.
-2. The overview shows documents, evidence items, entities, relationships, events, contradictions, anomalies and gaps. Each number opens the items behind it.
-3. Explore the graph, timeline and contradictions. Click any citation to open the original passage with its entities highlighted.
-4. Ask the Investigator a question, such as "What evidence connects Rajiv Mehta to Orion Systems?", and open the cited sources.
-5. Review findings (verify, dismiss, note, resolve), then generate and export the report.
+**Backend Health:**
+https://tracelens-api-rfm0.onrender.com/api/health
 
-## Architecture
+---
 
+# 🔎 What is TraceLens?
+
+**TraceLens is an evidence-driven document investigation platform that transforms scattered files into a connected, explorable investigation.**
+
+When information is spread across contracts, emails, statements, invoices, financial records, and other documents, important connections can remain hidden.
+
+TraceLens brings those pieces together through:
+
+* Entity extraction and relationship mapping
+* Interactive evidence graphs
+* Contradiction and anomaly detection
+* Chronological event reconstruction
+* Evidence gap identification
+* Source-linked investigator chat
+* Explainable investigation reports
+* Human-in-the-loop review
+
+Instead of simply generating a summary, TraceLens helps investigators understand:
+
+> **What was found, why it matters, and exactly where the supporting evidence exists.**
+
+Every finding should lead back to evidence. Every conclusion remains open to human verification.
+
+---
+
+# 🎯 The Problem
+
+## ALG-AI-02 — Intelligent Document Investigator
+
+Investigating a large collection of documents is time-consuming and error-prone.
+
+A relevant statement may be buried in one file, a related payment may appear in another, and a conflicting date may exist somewhere else.
+
+Reading documents individually makes it difficult to identify the bigger picture.
+
+Traditional document tools often focus on summarizing individual files, while investigations require connections across the entire collection.
+
+### The challenge
+
+* Important information is scattered across multiple documents.
+* Relationships between people, organizations, dates, and amounts are difficult to discover.
+* Contradictory statements can go unnoticed.
+* Missing supporting records are difficult to identify.
+* Findings are difficult to verify without source-level references.
+* Large document collections become increasingly difficult to review manually.
+
+### The real problem
+
+**The challenge is not simply understanding documents. It is connecting evidence across them.**
+
+---
+
+# 💡 Our Solution
+
+TraceLens treats a document collection as a connected evidence system rather than a collection of isolated files.
+
+```text
+Documents
+    ↓
+Evidence
+    ↓
+Entities
+    ↓
+Relationships
+    ↓
+Events
+    ↓
+Findings
+    ↓
+Investigation
 ```
-Browser (static site, no build step)
- ├─ Demo investigation  → precomputed, same schema as analyzer output
- ├─ Local analyzer      → TXT/CSV/MD/JSON parsed in the browser
- ├─ Retrieval + chat    → keyword, synonym and entity match → ranked evidence → cited answer
- └─ Views               → overview, documents, evidence, entities, graph, timeline,
-                          contradictions, anomalies, gaps, chat, reports
 
-Optional FastAPI backend
- ├─ POST /api/extract   → validate upload → extract text (PDF, DOCX, OCR) → return text
- ├─ Retrieval module    → same approach as the browser, over the demo case
- └─ Demo-case API       → serves demo_data/orion_case.json
+The system extracts useful information, connects related evidence, identifies potential inconsistencies and gaps, and presents findings alongside their supporting sources.
+
+## What makes TraceLens different?
+
+| Traditional Document Tool     | TraceLens                         |
+| ----------------------------- | --------------------------------- |
+| Summarizes individual files   | Investigates document collections |
+| Presents isolated information | Connects entities and evidence    |
+| Answers questions             | Provides source-linked answers    |
+| Hides relationships           | Visualizes an evidence graph      |
+| Focuses on summaries          | Focuses on investigation          |
+| Produces conclusions          | Supports human verification       |
+
+TraceLens is designed as an **investigation companion**, not an autonomous judge.
+
+---
+
+# ✨ Features
+
+## 01 — Interactive Evidence Graph
+
+Explore relationships between people, organizations, documents, events, dates, and amounts through a visual graph.
+
+* Drag, zoom, and pan
+* Search nodes
+* Filter by entity type
+* Highlight relationships
+* Follow connections
+* Inspect supporting evidence
+
+---
+
+## 02 — Contradiction Detection
+
+Identify potentially conflicting claims across documents.
+
+Each finding can include:
+
+* Related claims
+* Source references
+* Explanation of the potential conflict
+* Severity
+* Confidence information
+* Suggested verification steps
+
+TraceLens highlights potential conflicts without automatically deciding which source is correct.
+
+---
+
+## 03 — Evidence Gap Analyzer
+
+Identify potentially missing supporting records referenced by available documents.
+
+For example:
+
+```text
+Invoice
+   ↓
+Payment
+   ↓
+Delivery Confirmation
+   ↓
+❌ Not found in available documents
 ```
 
-* **Frontend:** plain JavaScript modules loaded by `index.html`, with a custom force-directed SVG graph. No frameworks or runtime dependencies.
-* **Local analysis:** regex-based entity extraction, passage-level evidence, co-mention relationships, dated events, IQR-based amount outliers, duplicate-passage detection, a negation-based contradiction heuristic, and detection of referenced-but-missing documents.
-* **Data flow:** every stage emits structured records (entity, evidence, relationship, event, contradiction, anomaly, gap) that reference evidence IDs. Findings without evidence IDs are not produced.
-* **Backend:** a thin FastAPI layer over pure-Python modules for validation, extraction and retrieval. Nothing is stored by `/api/extract`.
-* **Designed but not connected:** LLM claim reasoning, embeddings with pgvector, authentication and server-side persistence. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) and [`backend/db/schema.sql`](backend/db/schema.sql).
+This helps investigators identify evidence that may require further collection.
 
-## Tech Stack
+---
 
-| Layer    | Technology |
-| -------- | ---------- |
-| Frontend | HTML, CSS and JavaScript (no framework, no build step); custom SVG graph; Google Fonts (Schibsted Grotesk, Source Serif 4) |
-| Backend  | Python 3.12, FastAPI, Uvicorn, Pydantic, python-multipart, python-docx, PyMuPDF (optional pytesseract for OCR) |
-| Database | None is used at runtime. A PostgreSQL + pgvector schema is provided for future persistence. Review notes are stored in the browser's local storage. |
-| Tools    | Docker, Vercel (frontend hosting), Render (backend hosting), Python `unittest` |
+## 04 — Investigation Timeline
 
-## Project Structure
+Reconstruct a chronological view of dated events and examine how different records relate to one another.
 
+The timeline can bring together:
+
+* Documents
+* Transactions
+* Communications
+* Events
+* Dates
+* Related entities
+
+---
+
+## 05 — Entity Intelligence
+
+Explore consolidated information about important entities.
+
+Entity profiles can include:
+
+* Mention counts
+* Related documents
+* Connected entities
+* Associated events
+* Related amounts
+* Evidence references
+
+---
+
+## 06 — Cited Investigator Chat
+
+Ask questions about the available investigation evidence.
+
+Example:
+
+```text
+What evidence connects Rajiv Mehta to Orion Systems?
 ```
-tracelens/
+
+TraceLens searches the available investigation data and provides an answer with relevant source references when evidence is available.
+
+When sufficient evidence is unavailable, the system does not treat an unsupported conclusion as established fact.
+
+---
+
+## 07 — Human-in-the-Loop Review
+
+Investigators remain in control of the final interpretation.
+
+They can:
+
+* Verify findings
+* Dismiss irrelevant results
+* Flag evidence
+* Add notes
+* Add tags
+* Create manual entity links
+* Review supporting passages
+* Mark contradictions as resolved
+
+---
+
+## 08 — Investigation Reports
+
+Generate and export investigation results in:
+
+* HTML
+* JSON
+* CSV
+* Print-ready PDF
+
+Reports can contain findings, entities, relationships, timeline events, contradictions, evidence references, and investigation notes.
+
+---
+
+## 09 — Presentation Mode
+
+A guided investigation experience makes it easier to demonstrate the complete workflow during presentations and reviews.
+
+The investigation can be presented as:
+
+```text
+Case
+ ↓
+Documents
+ ↓
+Evidence
+ ↓
+Entities
+ ↓
+Relationships
+ ↓
+Findings
+ ↓
+Verification
+```
+
+---
+
+## 10 — Synthetic Investigation
+
+Explore **Orion Procurement Review**, a fictional investigation containing precomputed findings.
+
+The synthetic case demonstrates the complete investigation experience without requiring real confidential documents.
+
+---
+
+# ⚙️ How It Works
+
+TraceLens follows an evidence-first workflow that takes investigators from raw documents to connected findings.
+
+```text
+        📄 DOCUMENTS
+             │
+             ▼
+     ┌─────────────────┐
+     │ Upload & Import │
+     └────────┬────────┘
+              │
+              ▼
+     ┌─────────────────┐
+     │ Text Extraction │
+     └────────┬────────┘
+              │
+              ▼
+     ┌─────────────────────┐
+     │ Evidence & Entities │
+     │    Identification   │
+     └──────────┬──────────┘
+                │
+                ▼
+       ┌────────────────┐
+       │   Connections  │
+       │   & Relations  │
+       └───────┬────────┘
+               │
+       ┌───────┼────────┐
+       ▼       ▼        ▼
+    Timeline  Graph   Findings
+       │       │        │
+       └───────┼────────┘
+               ▼
+       ┌────────────────┐
+       │ Investigation  │
+       │    Workspace   │
+       └───────┬────────┘
+               │
+        ┌──────┼───────┐
+        ▼      ▼       ▼
+      Chat   Review   Reports
+```
+
+### 1. Upload Documents
+
+Investigators add the documents relevant to the case.
+
+The document collection becomes the evidence base for the investigation.
+
+### 2. Extract Content
+
+TraceLens extracts usable text from supported documents, including PDF, DOCX, TXT, and CSV content. OCR can be used when configured for image-based documents.
+
+### 3. Identify Evidence
+
+The system identifies useful information such as:
+
+* People
+* Organizations
+* Dates
+* Amounts
+* Claims
+* Events
+* Document references
+
+### 4. Connect Related Information
+
+Related entities and evidence are connected to form an investigation network.
+
+For example:
+
+```text
+Rajiv Mehta
+      │
+      ├──── works with ────► Orion Systems
+      │
+      ├──── appears in ────► Contract.pdf
+      │
+      └──── involved in ───► Payment #1042
+```
+
+These connections form the foundation of the Evidence Graph.
+
+### 5. Explore the Investigation
+
+The connected evidence is presented through multiple investigation views:
+
+* Evidence Graph
+* Timeline
+* Entity Intelligence
+* Findings
+* Evidence Gaps
+* Investigator Chat
+
+### 6. Investigate Across Documents
+
+Investigators can follow relationships across the collection rather than manually opening every file.
+
+```text
+Person
+  ↓
+Organization
+  ↓
+Transaction
+  ↓
+Document
+  ↓
+Evidence
+```
+
+### 7. Ask Questions
+
+Investigator Chat allows users to ask questions about the available evidence.
+
+Answers are based on the investigation data and can include source references.
+
+### 8. Verify Evidence
+
+Important findings can be traced back to their supporting sources.
+
+```text
+Finding
+   ↓
+Claim
+   ↓
+Evidence Reference
+   ↓
+Source Document
+   ↓
+Supporting Passage
+```
+
+### 9. Review Findings
+
+Investigators can add notes, tags, flags, manual links, and resolution status while reviewing findings.
+
+### 10. Generate Reports
+
+After reviewing the investigation, findings can be exported into structured reports.
+
+The complete workflow is:
+
+```text
+UPLOAD
+   ↓
+EXTRACT
+   ↓
+IDENTIFY
+   ↓
+CONNECT
+   ↓
+EXPLORE
+   ↓
+INVESTIGATE
+   ↓
+VERIFY
+   ↓
+REVIEW
+   ↓
+REPORT
+```
+
+---
+
+# 🖥️ Product Experience
+
+TraceLens is organized around an investigation workspace rather than a conventional chatbot.
+
+Core areas include:
+
+* Landing page
+* Investigation dashboard
+* Document workspace
+* Evidence graph
+* Entity intelligence
+* Contradiction analysis
+* Investigation timeline
+* Evidence gaps
+* Investigator Chat
+* Investigation reports
+* Presentation mode
+
+### Recommended Screenshots
+
+* Landing page
+* Investigation dashboard
+* Document upload
+* Evidence graph
+* Entity details
+* Contradiction findings
+* Timeline
+* Investigator Chat with citations
+* Evidence gap analysis
+* Generated report
+
+---
+
+# 🏗️ Architecture
+
+```text
+                         TRACELENS
+                             |
+              +--------------+--------------+
+              |                             |
+          FRONTEND                       BACKEND
+           Vercel                         Render
+              |                             |
+       HTML / CSS / JS                  FastAPI
+              |                             |
+      +-------+-------+            +--------+--------+
+      |       |       |            |        |        |
+    Views   Graph   Chat       Upload   Extraction Retrieval
+      |       |       |            |        |        |
+      +-------+-------+            +--------+--------+
+              |                             |
+              |                       Extracted Text
+              |                             |
+              +-------------+---------------+
+                            |
+                   Structured Evidence
+                            |
+              +-------------+-------------+
+              |             |             |
+            Graph        Timeline      Findings
+              |             |             |
+              +-------------+-------------+
+                            |
+                       Human Review
+                            |
+                       Export Report
+```
+
+---
+
+# 🧩 Frontend
+
+The frontend is built using:
+
+* HTML5
+* CSS3
+* Vanilla JavaScript
+* JavaScript modules
+* Custom SVG visualization
+* Browser LocalStorage
+
+The application is lightweight and does not require a frontend framework.
+
+---
+
+# ⚡ Backend
+
+The backend is implemented using:
+
+* Python
+* FastAPI
+* Uvicorn
+* Pydantic
+* Document extraction
+* Retrieval functionality
+* Authentication support
+
+### Production Backend
+
+```text
+https://tracelens-api-rfm0.onrender.com
+```
+
+### API Documentation
+
+```text
+https://tracelens-api-rfm0.onrender.com/api/docs
+```
+
+---
+
+# 🛠️ Tech Stack
+
+| Category            | Technology              |
+| ------------------- | ----------------------- |
+| Frontend            | HTML5, CSS3, JavaScript |
+| Visualization       | Custom SVG Graph        |
+| Backend             | Python 3.12, FastAPI    |
+| API Server          | Uvicorn                 |
+| Validation          | Pydantic                |
+| Document Processing | PyMuPDF, python-docx    |
+| OCR                 | Optional pytesseract    |
+| Authentication      | PBKDF2-SHA256, HMAC     |
+| Local Persistence   | Browser LocalStorage    |
+| Testing             | Python unittest         |
+| Frontend Deployment | Vercel                  |
+| Backend Deployment  | Render                  |
+| Version Control     | Git & GitHub            |
+
+---
+
+# 📁 Project Structure
+
+```text
+TraceLens/
+│
 ├── frontend/
 │   ├── index.html
-│   ├── config.js              # set TRACELENS_API_URL to enable the backend
+│   ├── config.js
 │   ├── vercel.json
-│   ├── assets/                # styles.css, logo and favicon files
+│   ├── assets/
+│   │   └── logo-full.png
 │   └── src/
-│       ├── data.js            # synthetic demo investigation
-│       ├── analyze.js         # derived indexes, confidence, local analyzer
-│       ├── core.js            # state, helpers, routing, evidence drawer
-│       ├── views.js           # page views
-│       ├── graph.js           # force layout and SVG graph
-│       ├── chat.js            # retrieval, investigator, report, exports
-│       └── main.js            # shell, landing, theme, upload, presentation mode
+│       ├── data.js
+│       ├── analyze.js
+│       ├── core.js
+│       ├── views.js
+│       ├── graph.js
+│       ├── chat.js
+│       └── main.js
+│
 ├── backend/
-│   ├── app/                   # main.py, config.py, validation.py, extract.py, retrieval.py
-│   ├── tests/test_core.py
-│   ├── db/schema.sql
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── validation.py
+│   │   ├── extract.py
+│   │   └── retrieval.py
+│   │
+│   ├── tests/
+│   ├── db/
+│   │   └── schema.sql
 │   ├── requirements.txt
 │   └── Dockerfile
-├── demo_data/orion_case.json
-├── docs/                      # ARCHITECTURE.md, DEMO_SCRIPT.md
+│
+├── demo_data/
+│   └── orion_case.json
+│
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── DEMO_SCRIPT.md
+│
 ├── .env.example
 ├── render.yaml
-└── vercel.json
+├── vercel.json
+└── README.md
 ```
 
-## Getting Started
+---
 
-### Prerequisites
+# 🚀 Getting Started
 
-* **Frontend only:** any modern browser, and Python 3 (or any static file server) to serve the folder.
-* **Backend (optional):** Python 3.10+; Tesseract is needed only for image OCR.
+## Prerequisites
 
-### Installation
+### Frontend
 
-The frontend needs no installation. For the backend:
+* Modern web browser
+* Python 3 or another static file server
+
+### Backend
+
+* Python 3.10+
+* Tesseract OCR for image-based OCR when required
+
+---
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/TraceLens.git
+cd TraceLens
+```
+
+---
+
+## 2. Run the Frontend
+
+```bash
+cd frontend
+python -m http.server 5173
+```
+
+Open:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 3. Run the Backend
+
+Open another terminal:
 
 ```bash
 cd backend
-python3 -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+python -m venv .venv
+```
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-### Environment Variables
-
-Copy `.env.example` and set values for the backend. Secrets are read only by the backend and never sent to the browser.
-
-| Variable | Purpose |
-| -------- | ------- |
-| `ALLOWED_ORIGINS` | Comma-separated frontend origins allowed by CORS |
-| `MAX_UPLOAD_MB` | Upload size limit (default 15) |
-| `AUTH_SECRET` | Long random string used to sign login tokens. Set it, or sessions end whenever the server restarts |
-| `AUTH_DB_PATH` | SQLite file for user accounts (default `tracelens_users.db`). Use a persistent disk in production |
-| `DATABASE_URL` | Reserved for future persistence; not used yet |
-| `LLM_API_KEY`, `EMBEDDING_API_KEY` | Reserved for future AI reasoning; not used yet |
-
-The frontend reads one setting, `window.TRACELENS_API_URL`, from `frontend/config.js`. Leave it empty to run entirely in the browser.
-
-### Run Locally
+Start the API:
 
 ```bash
-# Frontend
-cd frontend
-python3 -m http.server 5173        # open http://localhost:5173
-
-# Backend (optional, in a second terminal)
-cd backend
-uvicorn app.main:app --reload --port 8000    # API docs at http://localhost:8000/api/docs
+uvicorn app.main:app --reload --port 8000
 ```
 
-To use the backend from the frontend, set `window.TRACELENS_API_URL = 'http://localhost:8000'` in `frontend/config.js` and set `ALLOWED_ORIGINS=http://localhost:5173`.
+The API will be available at:
 
-## Sign-in
+```text
+http://localhost:8000
+```
 
-The app opens on a login page (logo, email, password with a Show/Hide toggle). After signing in you land on the landing page. **Sign out** is on the landing page and in the sidebar.
+API documentation:
 
-* **With a backend** (`TRACELENS_API_URL` set): accounts are stored on the server (`/api/auth/register`, `/api/auth/login`, `/api/auth/me`). Passwords are hashed with PBKDF2-SHA256 and a per-user salt, login tokens are HMAC-signed and expire after 7 days, login attempts are rate limited, and `/api/extract` requires a valid token.
-* **Without a backend:** accounts are kept in this browser only (hashed with PBKDF2 via WebCrypto). This is a convenience gate, not security, because anyone with access to the browser profile can clear it.
+```text
+http://localhost:8000/api/docs
+```
 
-## Usage
+---
 
-* **Judges / quick tour:** click **Explore Demo**, or press **Presentation mode** for a guided walkthrough. A step-by-step script is in [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
-* **Your own files:** click **Start Investigation** and sign in (or create an account), then add TXT, CSV, Markdown, JSON, PDF, DOCX or image files (up to 15 MB each). They are read and analyzed in your browser; they are only sent to a server if you configure a backend.
-* **Ask questions:** open Investigation Chat. Try a connection question, "Find all payments above ₹5 lakh", or an unrelated question to see the insufficient-evidence reply.
-* **Review and export:** use the review controls in the evidence panel, then generate a report under Reports.
-* **Theme:** use the sun/moon button; the choice is remembered.
+# 🔧 Frontend Configuration
 
-## Screenshots
+Configure the backend URL in:
 
-> **To complete before submission:** add screenshots to `docs/screenshots/` and link them here. Suggested set: landing page, overview, evidence graph with an open relationship, contradiction detail, timeline, investigator answer with citations, report, and the light theme.
+```text
+frontend/config.js
+```
 
-## Testing
+For local development:
 
-**Backend unit tests** (validation, extraction, retrieval):
+```javascript
+window.TRACELENS_API_URL = "http://localhost:8000";
+```
+
+For production:
+
+```javascript
+window.TRACELENS_API_URL = "https://tracelens-api-rfm0.onrender.com";
+```
+
+---
+
+# 🌐 Deployment
+
+TraceLens uses:
+
+* **Vercel** for the frontend
+* **Render** for the FastAPI backend
+
+## Frontend — Vercel
+
+### Production URL
+
+```text
+https://tracelens-frontend-ten.vercel.app/
+```
+
+The frontend is deployed as a static web application.
+
+### Deployment
+
+1. Import the repository into Vercel.
+2. Set the root directory to `frontend`.
+3. Use the static/other framework preset.
+4. Leave the build command empty when no build step is required.
+5. Deploy.
+
+---
+
+# Backend — Render
+
+### Production URL
+
+```text
+https://tracelens-api-rfm0.onrender.com
+```
+
+The backend runs as a FastAPI service.
+
+## Production Endpoints
+
+| Endpoint          | Purpose                       |
+| ----------------- | ----------------------------- |
+| `/`               | Backend root                  |
+| `/api/health`     | Health check                  |
+| `/api/docs`       | Interactive API documentation |
+| `/api/auth/login` | Authentication login          |
+
+### Root Endpoint
+
+```text
+https://tracelens-api-rfm0.onrender.com/
+```
+
+Expected response:
+
+```json
+{
+  "detail": "Not Found"
+}
+```
+
+This is normal because the backend does not serve a webpage at the root path.
+
+### Health Endpoint
+
+```text
+https://tracelens-api-rfm0.onrender.com/api/health
+```
+
+Returns the backend health/status information.
+
+### API Documentation
+
+```text
+https://tracelens-api-rfm0.onrender.com/api/docs
+```
+
+Provides an interactive list of the available FastAPI endpoints.
+
+### Login Endpoint
+
+```text
+https://tracelens-api-rfm0.onrender.com/api/auth/login
+```
+
+Opening this URL directly in a browser returns:
+
+```json
+{
+  "detail": "Method Not Allowed"
+}
+```
+
+This is expected because the endpoint requires a form submission rather than a browser `GET` request.
+
+---
+
+# 🔗 Production Architecture
+
+```text
+                  USER
+                    |
+                    ▼
+        ┌──────────────────────┐
+        │      TraceLens       │
+        │      Frontend        │
+        │       Vercel         │
+        └──────────┬───────────┘
+                   |
+                   | API Requests
+                   ▼
+        ┌──────────────────────┐
+        │      TraceLens       │
+        │       Backend        │
+        │       FastAPI        │
+        │       Render         │
+        └──────────┬───────────┘
+                   |
+          ┌────────┼────────┐
+          ▼        ▼        ▼
+      Extraction Retrieval  Auth
+```
+
+---
+
+# 🔐 Privacy & Security
+
+TraceLens follows a privacy-conscious investigation workflow.
+
+Key principles include:
+
+* Local document analysis where supported
+* Server-side secrets are not exposed to the frontend
+* Authentication support through the backend
+* Browser-based persistence for review notes
+* Evidence references associated with investigation findings
+* Synthetic data for the demonstration case
+
+### Security Considerations
+
+A production deployment handling sensitive investigations would require:
+
+* Strong server-side authentication
+* Proper authorization
+* Persistent user isolation
+* Encrypted storage
+* Secure session management
+* Audit logging
+* Secure document storage
+* Additional access-control policies
+
+TraceLens is a hackathon/prototype investigation platform and should not be treated as a production forensic or legal system.
+
+---
+
+# 🧪 Testing
+
+Backend tests cover:
+
+* File validation
+* Unsupported uploads
+* Empty uploads
+* Upload size restrictions
+* TXT extraction
+* CSV extraction
+* DOCX extraction
+* Corrupt DOCX handling
+* Retrieval with citations
+* Amount filtering
+* Insufficient-evidence responses
+
+### Run Tests
 
 ```bash
 cd backend
-python3 -m unittest discover -s tests -t .
+python -m unittest discover -s tests -t .
 ```
 
-Result when last run during development: 9 tests, all passing. This covers upload validation (bad type, empty, oversize, fake PDF), TXT/CSV/DOCX extraction, corrupt DOCX handling, and retrieval (connection question with citations and contradiction note, amount filtering, insufficient-evidence reply).
+### Recorded Development Result
 
-**Frontend logic** was checked during development with a Node script that rendered every page for both the demo and an uploaded file, ran the investigator on sample questions, and generated the report, CSV and JSON. All checks passed. That script is not included in this repository.
+```text
+9 backend unit tests passed
+```
 
-**Not verified:** the HTTP layer of the backend has not been started in the build environment, and the interface has not been checked in a real browser by the author of this README. Please run a manual pass using `docs/DEMO_SCRIPT.md` before relying on it.
+Frontend logic was also checked using Node-based verification for page rendering, sample queries, and report exports.
 
-## Deployment
+The complete production workflow should still be manually verified after deployment.
 
-Both services have free tiers. Detailed steps:
+---
 
-* **Frontend (Vercel):** import the repository, set **Root Directory** to `frontend`, framework preset **Other**, leave build and output settings empty, and deploy. Netlify, Cloudflare Pages and GitHub Pages also work because the site is static.
-* **Backend (Render, optional):** create a Blueprint from the repository; `render.yaml` builds `backend/Dockerfile`. Set `ALLOWED_ORIGINS` to the frontend URL, check `/api/health`, then put the API URL into `frontend/config.js` and redeploy the frontend. Free instances sleep when idle, so the first request can be slow.
+# 📊 Evidence-First Design
 
-**Live URL:** `[add after deploying]`
+TraceLens follows an evidence-first principle.
 
-## Limitations
+Rather than treating generated answers as authoritative, findings are connected to underlying evidence whenever possible.
 
-* Analysis of uploaded files is rule-based. Entity detection is pattern-based and can miss or mislabel names, and contradiction detection on uploads is a heuristic that flags negated statements about the same parties.
-* The demo investigation's findings are precomputed, not generated at runtime.
-* There is no LLM reasoning, embedding search, or server-side storage of investigations yet. Accounts exist (see Sign-in below), but investigations and review notes live in the browser only. Review notes live in the browser only.
-* PDF, DOCX and OCR uploads need the backend, which is optional and has not been run end to end in the build environment.
-* Upload limit is 15 MB per file, both in the browser and on the backend. Very large files take longer to analyze, and the graph is still designed for tens to low hundreds of nodes.
-* The graph is built for tens to low hundreds of nodes, not very large networks.
-* Security is basic input validation. It is not enterprise-grade.
+```text
+Finding
+   ↓
+Claim
+   ↓
+Evidence Reference
+   ↓
+Source Document
+   ↓
+Supporting Passage
+```
 
-## Future Improvements
+The objective is not simply:
 
-* LLM-based claim extraction and cross-document contradiction reasoning with citation checks.
-* Embedding search with pgvector blended into the current hybrid retrieval.
-* Authentication, per-investigation isolation and persistent storage.
-* Collaborative review and audit trail.
-* Scalable graph rendering and more document formats.
-* Port the frontend to a component framework with automated browser tests.
+> **"Here is the answer."**
 
-## AI and Third-Party Acknowledgements
+It is:
 
-* **AI-assisted development:** the application code, documentation and demo dataset were produced with the help of Claude (Anthropic). The team is responsible for reviewing and verifying the result.
-* **No AI model runs inside the application today.** Entity extraction, retrieval and chat answers use deterministic rules.
-* **Libraries (backend):** FastAPI, Uvicorn, Pydantic, python-multipart, python-docx, PyMuPDF (AGPL-3.0, check compatibility with your chosen license), optional pytesseract.
-* **Fonts:** Schibsted Grotesk and Source Serif 4 via Google Fonts (SIL Open Font License).
-* **Assets:** the TraceLens logo was supplied by the team; favicon sizes were generated from it with Pillow.
-* **Data:** the demo case is entirely fictional and synthetic. Names, companies and amounts are invented. No external datasets are used.
+> **"Here is the finding, and here is the evidence supporting it."**
 
-## Team
+---
 
-| Name | Contribution |
-| ---- | ------------ |
-| `[add name]` | `[add contribution]` |
+# 🧠 Explainability
 
-## License
+TraceLens is designed around explainable investigation.
 
-`[add license, or remove this section]`. Note that PyMuPDF is AGPL-3.0 licensed, which may affect the license you can choose for a deployed backend.
+A finding can be examined through:
+
+* What was detected
+* Which entities are involved
+* Which documents contain the relevant information
+* Which claims are related
+* Why the information may be important
+* What should be verified next
+
+This keeps the investigation experience focused on evidence rather than black-box conclusions.
+
+---
+
+# ⚠️ Limitations & Transparency
+
+TraceLens currently uses deterministic and rule-based analysis in several parts of the system.
+
+Current limitations include:
+
+* Pattern-based entity extraction may miss or misclassify entities.
+* Contradiction detection is heuristic.
+* Findings require human verification.
+* Some demonstration findings are precomputed.
+* LLM reasoning is not connected to every investigation component.
+* Embedding-based semantic retrieval is not used throughout the system.
+* Investigation data and review notes may be stored locally in the browser.
+* OCR processing requires the optional backend functionality.
+* Graph performance is optimized for tens to low hundreds of nodes.
+* The application is not an enterprise-grade legal or forensic platform.
+
+TraceLens supports investigation and review.
+
+It does **not** establish:
+
+* Guilt
+* Legal liability
+* Criminal responsibility
+* Factual certainty
+
+Human investigators remain responsible for interpreting and verifying findings.
+
+---
+
+# 🔭 Future Roadmap
+
+## AI & Retrieval
+
+* LLM-assisted claim extraction
+* Citation verification
+* Semantic search
+* Embedding-based retrieval
+* Cross-document reasoning
+* Evidence-aware AI agents
+
+## Investigation
+
+* Persistent investigations
+* Advanced evidence versioning
+* Stronger entity resolution
+* More sophisticated contradiction analysis
+* Advanced relationship inference
+
+## Collaboration
+
+* Multi-user investigations
+* Shared workspaces
+* Investigation audit trails
+* Investigator roles and permissions
+
+## Visualization
+
+* Advanced graph layouts
+* Larger graph support
+* Relationship filtering
+* Multi-hop evidence exploration
+* Advanced timeline visualization
+
+## Platform
+
+* Automated browser testing
+* Additional document formats
+* Enterprise authentication
+* Secure cloud document storage
+
+---
+
+# 🌍 Potential Impact
+
+TraceLens can reduce the effort required to review large document collections and make important relationships easier to discover.
+
+| Domain                  | Potential Use                              |
+| ----------------------- | ------------------------------------------ |
+| Auditing                | Trace transactions and supporting records  |
+| Compliance              | Identify missing documentation             |
+| Journalism              | Connect entities and events across sources |
+| Legal Research          | Organize claims and supporting passages    |
+| Business Operations     | Review contracts and procurement records   |
+| Internal Investigations | Connect evidence across multiple records   |
+
+The goal is not to replace human judgment.
+
+The goal is to make evidence:
+
+**Easier to discover.
+Easier to connect.
+Easier to verify.**
+
+---
+
+# 👥 Team
+
+## Team Twinergy
+
+| Member          | Contribution        |
+| --------------- | ------------------- |
+| Sreshtha Das    | Project development |
+| Madhurita Ghosh | Project development |
+
+---
+
+# 🏆 Hackathon Context
+
+**ALGOTHON'26**
+
+### Problem Statement
+
+**ALG-AI-02 — Intelligent Document Investigator**
+
+TraceLens was developed to address the challenge of investigating information across multiple documents and connecting scattered evidence into a coherent investigation.
+
+---
+
+# 📜 Synthetic Dataset
+
+The **Orion Procurement Review** investigation is fictional and synthetic.
+
+No real-world confidential investigation data is used in the demonstration.
+
+The synthetic dataset demonstrates:
+
+* Document relationships
+* Entity extraction
+* Evidence connections
+* Contradictions
+* Timeline reconstruction
+* Evidence gaps
+* Investigator queries
+* Source-linked findings
+
+---
+
+# 🤝 Acknowledgements
+
+* Built for **ALGOTHON'26**
+* Problem Statement: **ALG-AI-02 — Intelligent Document Investigator**
+* AI-assisted development support was used during implementation.
+* The final project was reviewed and developed by the team.
+* The Orion Procurement Review dataset is fictional and synthetic.
+* No external real-world investigation data is used in the demonstration.
+
+---
+
+# 🚀 Production Links
+
+| Resource                  | Link                                               |
+| ------------------------- | -------------------------------------------------- |
+| 🌐 **TraceLens Frontend** | https://tracelens-frontend-ten.vercel.app/         |
+| ⚡ **TraceLens Backend**   | https://tracelens-api-rfm0.onrender.com            |
+| ❤️ **Backend Health**     | https://tracelens-api-rfm0.onrender.com/api/health |
+| 📚 **API Documentation**  | https://tracelens-api-rfm0.onrender.com/api/docs   |
+
+---
+
+<p align="center">
+  <strong>TraceLens</strong>
+  <br>
+  <em>Investigate documents. Follow the evidence.</em>
+  <br><br>
+  Made with purpose by Team Twinergy.
+</p>
